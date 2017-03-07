@@ -10,8 +10,8 @@ import UIKit
 
 class WCRequestManager: NSObject {
     
-    let kLoginUrl       = "http://10.1.1.139:8080/login"
-    let kRegstrationUrl = "http://10.1.1.139:8080/registration"
+    let kLoginUrl       = "http://10.1.6.233:8080/login"
+    let kRegstrationUrl = "http://10.1.6.233:8080/registration"
     
     func loginRequest(paramDict:NSDictionary, completionHandler:@escaping (Data?, URLResponse?, Error?) -> Void) {
         let loginUrl = URL(string: kLoginUrl)

@@ -34,6 +34,10 @@ class LRViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(MessagesViewController.dismissKeyboard))
+        
+        view.addGestureRecognizer(tap)
+        
         /*
         self.usernameTextField.rx.text
         .asObservable()
@@ -41,6 +45,11 @@ class LRViewController: UIViewController, UITextFieldDelegate {
         .bindTo(self.passwordTextField.rx.text)
         .addDisposableTo(self.disposeBag)
         */
+    }
+    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
 
     override func didReceiveMemoryWarning() {
